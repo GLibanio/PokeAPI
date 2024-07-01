@@ -1,0 +1,279 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+}
+
+body {
+  background: linear-gradient(to right, #d4d3dd, #efefbb);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+nav {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+}
+h1 {
+  letter-spacing: 10px;
+  font-size: 3.5rem;
+  font-weight: 400;
+}
+
+.pokeContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 10px auto;
+  max-width: 1200px;
+}
+
+.pokemon {
+  background-color: #eee;
+  border-radius: 10px;
+  box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+  margin: 10px 20px;
+  padding: 20px;
+  text-align: center;
+  width: 200px;
+  position: relative;
+}
+
+.pokemon .name {
+  margin: 15px 0 7px;
+  letter-spacing: 1.5px;
+  font-size: 1.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 180px; 
+}
+
+.pokemon .infos {
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+.pokemon .number {
+  background-color: rgb(0, 0, 0, 0.2);
+  padding: 2px 13px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.pokemon .type {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  margin: 5px 0;
+  font-size: 0.8rem;
+  padding: 2px 5px;
+}
+
+
+.pokemon:hover {
+  transform: translateY(-5px);
+}
+
+.imgContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto; 
+}
+
+.select-container {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.form-select {
+  appearance: none;
+  border: none;
+  background: none;
+  font-size: 1rem;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #ccc;
+  background: url("data:image/svg+xml;charset=US-ASCII,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='%23999' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e")
+    no-repeat right 10px center;
+  background-size: 8px 10px;
+  transition: border-color 0.3s ease;
+}
+
+.form-select:focus {
+  outline: none;
+  border-color: transparent;
+}
+
+.form-select option {
+  border: none;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.type span {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  margin: 0 2px;
+  font-size: 0.8rem;
+}
+
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4); 
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 900px;
+  height: 50%;
+  max-height: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.modal-body {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.modal-image-container img {
+  width: 230px;
+  height: 230px;
+  background-color: rgba(255, 248, 248, 0.5);
+  border-radius: 50%;
+}
+
+.modal-info {
+  flex: 1;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.modal-info h2 {
+  margin: 0;
+  padding: 0;
+}
+
+.modal-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.modal-types {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.modal-types span {
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: bold;
+}
+
+.close {
+  color: #424242;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-stats {
+  margin-top: 10px;
+}
+
+.value_stats {
+  padding-left: 5px;
+}
+
+.stat-bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.stat-bar span {
+  width: 100px;
+  font-weight: bold;
+}
+
+.stat-bar .bar {
+  height: 20px;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+.stat-bar.hp .bar {
+  background-color: #ff5959;
+}
+
+.stat-bar.attack .bar {
+  background-color: #f5ac78;
+}
+
+.stat-bar.defense .bar {
+  background-color: #fae078;
+}
+
+.stat-bar.sp-attack .bar {
+  background-color: #7c92c5;
+}
+
+.stat-bar.sp-defense .bar {
+  background-color: #7fad67;
+}
+
+.stat-bar.speed .bar {
+  background-color: #fa92b2;
+}
+

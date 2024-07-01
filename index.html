@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>PokeDex</title>
+  </head>
+  <body>
+    <main>
+      <nav>
+        <h1>PokéDex</h1>
+        <div class="select-container">
+          <select class="form-select" id="typeSelect" aria-label="Type">
+            <option value="all" selected>All</option>
+            <option value="fire">Fire</option>
+            <option value="grass">Grass</option>
+            <option value="water">Water</option>
+            <option value="electric">Electric</option>
+            <option value="ground">Ground</option>
+            <option value="rock">Rock</option>
+            <option value="fairy">Fairy</option>
+            <option value="poison">Poison</option>
+            <option value="bug">Bug</option>
+            <option value="dragon">Dragon</option>
+            <option value="psychic">Psychic</option>
+            <option value="flying">Flying</option>
+            <option value="fighting">Fighting</option>
+            <option value="normal">Normal</option>
+          </select>
+        </div>
+      </nav>
+      <div class="pokeContainer" id="pokeContainer"></div>
+
+      <div id="pokemonModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <div class="modal-body">
+            <div class="modal-image-container">
+              <img id="modal-image" src="" alt="Pokemon Image" />
+            </div>
+            <div class="modal-info">
+              <h2 id="modal-name"></h2>
+              <div id="modal-types"></div>
+              <div id="modal-stats" class="modal-stats"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
